@@ -10,6 +10,7 @@
 #define FPF_SKIAMATCHWEIGHT_NAME2	60
 #define FPF_SKIAMATCHWEIGHT_1		16
 #define FPF_SKIAMATCHWEIGHT_2		8
+#include "../../../include/fxcrt/fx_ext.h"
 #include "fpf_skiafontmgr.h"
 #include "fpf_skiafont.h"
 #ifdef __cplusplus

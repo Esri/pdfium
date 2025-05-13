@@ -61,7 +61,9 @@
 
 #if _FXM_PLATFORM_ == _FXM_PLATFORM_APPLE_
 #include <libkern/OSAtomic.h>
-#include <Carbon/Carbon.h>
+#include <CoreGraphics/CoreGraphics.h>
+#include <CoreFoundation/CoreFoundation.h>
+#include <CoreText/CoreText.h>
 #endif
 
 #ifdef __cplusplus

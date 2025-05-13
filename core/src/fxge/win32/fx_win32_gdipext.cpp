@@ -12,6 +12,7 @@ namespace Gdiplus {
   using std::min;
   using std::max;
 }  // namespace Gdiplus
+#include <objidl.h>
 #include <gdiplus.h>
 #include "../../../include/fxge/fx_ge_win32.h"
 #include "win32_int.h"
@@ -821,7 +822,7 @@ static GpPen* _GdipCreatePen(const CFX_GraphStateData* pGraphState, const CFX_Af
     CallFunc(GdipSetPenMiterLimit)(pPen, pGraphState->m_MiterLimit);
     return pPen;
 }
-static FX_BOOL IsSmallTriangle(PointF* points, const CFX_AffineMatrix* pMatrix, int& v1, int& v2)
+static BOOL IsSmallTriangle(PointF* points, const CFX_AffineMatrix* pMatrix, int& v1, int& v2)
 {
     int pairs[] = {1, 2, 0, 2, 0, 1};
     for (int i = 0; i < 3; i ++) {
@@ -844,7 +845,7 @@ static FX_BOOL IsSmallTriangle(PointF* points, const CFX_AffineMatrix* pMatrix, 
     }
     return FALSE;
 }
-FX_BOOL CGdiplusExt::DrawPath(HDC hDC, const CFX_PathData* pPathData,
+BOOL CGdiplusExt::DrawPath(HDC hDC, const CFX_PathData* pPathData,
                            const CFX_AffineMatrix* pObject2Device,
                            const CFX_GraphStateData* pGraphState,
                            FX_DWORD fill_argb,

@@ -9,7 +9,9 @@
 
 #if _FXM_PLATFORM_  == _FXM_PLATFORM_APPLE_
 #if _FX_OS_ == _FX_MACOSX_
-#include <Carbon/Carbon.h>
+#include <CoreGraphics/CoreGraphics.h>
+#include <CoreFoundation/CoreFoundation.h>
+#include <CoreText/CoreText.h>
 #endif
 typedef enum eFXIOSFONTCHARSET {
     eFXFontCharsetDEFAULT       =   0,
