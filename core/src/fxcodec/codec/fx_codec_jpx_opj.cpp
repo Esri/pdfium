@@ -8,7 +8,7 @@
 #include <limits>
 
 #include "../../../../third_party/lcms2-2.6/include/lcms2.h"
-#include "../../../../third_party/libopenjpeg20/openjpeg.h"
+#include <openjpeg.h>
 #include "../../../include/fxcodec/fx_codec.h"
 #include "codec_int.h"
 

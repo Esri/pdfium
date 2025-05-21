@@ -13,11 +13,8 @@ includedirs {
   _3RDPARTY_DIR .. "/freetype/include",
   _3RDPARTY_DIR .. "/freetype/include/freetype",
   _3RDPARTY_DIR .. "/libjpeg-turbo",
+  _3RDPARTY_DIR .. "/openjpeg/src/lib/openjp2",
   _3RDPARTY_DIR .. "/zlib-ng",
-}
-
-defines {
-  "OPJ_STATIC",
 }
 
 files {
@@ -146,24 +143,6 @@ files {
   "third_party/lcms2-2.6/src/cmsvirt.c",
   "third_party/lcms2-2.6/src/cmswtpnt.c",
   "third_party/lcms2-2.6/src/cmsxform.c",
-  "third_party/libopenjpeg20/bio.c",
-  "third_party/libopenjpeg20/cio.c",
-  "third_party/libopenjpeg20/dwt.c",
-  "third_party/libopenjpeg20/event.c",
-  "third_party/libopenjpeg20/function_list.c",
-  "third_party/libopenjpeg20/image.c",
-  "third_party/libopenjpeg20/invert.c",
-  "third_party/libopenjpeg20/j2k.c",
-  "third_party/libopenjpeg20/jp2.c",
-  "third_party/libopenjpeg20/mct.c",
-  "third_party/libopenjpeg20/mqc.c",
-  "third_party/libopenjpeg20/openjpeg.c",
-  "third_party/libopenjpeg20/pi.c",
-  "third_party/libopenjpeg20/raw.c",
-  "third_party/libopenjpeg20/t1.c",
-  "third_party/libopenjpeg20/t2.c",
-  "third_party/libopenjpeg20/tcd.c",
-  "third_party/libopenjpeg20/tgt.c",
 }
 
 if (_PLATFORM_ANDROID) then
