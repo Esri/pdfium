@@ -13,7 +13,7 @@
 
 extern "C" {
 #undef FAR
-#include "../../../../third_party/libjpeg/jpeglib.h"
+#include <jpeglib.h>
 }
 
 extern "C" {
