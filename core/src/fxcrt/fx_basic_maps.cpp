@@ -209,8 +209,11 @@ void CFX_MapByteStringToPtr::RemoveAll()
     }
     m_nCount = 0;
     m_pFreeList = NULL;
-    m_pBlocks->FreeDataChain();
-    m_pBlocks = NULL;
+    if (m_pBlocks)
+    {
+      m_pBlocks->FreeDataChain();
+      m_pBlocks = NULL;
+    }
 }
 CFX_MapByteStringToPtr::~CFX_MapByteStringToPtr()
 {
