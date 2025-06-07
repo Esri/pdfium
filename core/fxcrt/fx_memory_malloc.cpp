@@ -48,7 +48,9 @@ void* Realloc(void* ptr, size_t num_members, size_t member_size) {
 }
 
 void Dealloc(void* ptr) {
-  free(ptr);
+  if (ptr) {
+    free(ptr);
+  }
 }
 
 void* StringAlloc(size_t num_members, size_t member_size) {
@@ -60,7 +62,9 @@ void* StringAlloc(size_t num_members, size_t member_size) {
 }
 
 void StringDealloc(void* ptr) {
-  free(ptr);
+  if (ptr) {
+    free(ptr);
+  }
 }
 
 }  // namespace internal
@@ -85,5 +89,7 @@ void* FX_ArrayBufferAllocateUninitialized(size_t length) {
 }
 
 void FX_ArrayBufferFree(void* data) {
-  free(data);
+  if (data) {
+    free(data);
+  }
 }

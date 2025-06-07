@@ -16,17 +16,17 @@ namespace internal {
 
 // Returns a value with all bytes in |x| swapped, i.e. reverses the endianness.
 // TODO(thestig): Once C++23 is available, replace with std::byteswap.
-inline constexpr uint16_t ByteSwap(uint16_t x) {
+inline uint16_t ByteSwap(uint16_t x) {
 #if defined(COMPILER_MSVC) && !defined(__clang__)
-#error "MSVC is not supported."
+  return _byteswap_ushort(x);
 #else
   return __builtin_bswap16(x);
 #endif
 }
 
-inline constexpr uint32_t ByteSwap(uint32_t x) {
+inline uint32_t ByteSwap(uint32_t x) {
 #if defined(COMPILER_MSVC) && !defined(__clang__)
-#error "MSVC is not supported."
+  return _byteswap_ulong(x);
 #else
   return __builtin_bswap32(x);
 #endif
