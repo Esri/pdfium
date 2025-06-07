@@ -4,8 +4,8 @@ from conans import ConanFile
 class PdfiumConan(ConanFile):
     name = "pdfium"
     version = "chromium7047"
-    url = "https://devtopia.esri.com/3rdparty/pdfium/tree/runtimecore"
-    license = "https://devtopia.esri.com/3rdparty/pdfium/blob/runtimecore/LICENSE"
+    url = "https://github.com/Esri/pdfium/tree/runtimecore"
+    license = "https://github.com/Esri/pdfium/blob/runtimecore/LICENSE"
     description = "Reading, parsing, and rasterizing the pages of a .pdf file to .ppm or .png output image files."
 
     # RTC specific triple
