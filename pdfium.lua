@@ -8,6 +8,15 @@ uuid "5149C8A4-ADEA-47BD-BD79-BA7A8C5B0A89"
 
 flags { "NoPCH" }
 
+if _PLATFORM_ANDROID then
+  buildoptions {
+    "-fno-lto"
+  }
+  linkoptions {
+    "-fno-lto"
+  }
+end
+
 includedirs {
   ".",
   _3RDPARTY_DIR,
