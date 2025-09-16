@@ -71,8 +71,7 @@ class CPDF_RenderOptions {
   void SetDrawAnnots(bool draw) { m_bDrawAnnots = draw; }
   bool GetDrawAnnots() const { return m_bDrawAnnots; }
 
-  const CPDF_OCContextInterface* GetOCContext() const { return m_pOCContext.Get(); }
-  void SetOCContext(RetainPtr<CPDF_OCContextInterface> context) {
+  void SetOCContext(RetainPtr<CPDF_OCContext> context) {
     m_pOCContext = context;
   }
 
@@ -81,7 +80,7 @@ class CPDF_RenderOptions {
   bool m_bDrawAnnots = false;
   Options m_Options;
   ColorScheme m_ColorScheme = {};
-  RetainPtr<CPDF_OCContextInterface> m_pOCContext;
+  RetainPtr<CPDF_OCContext> m_pOCContext;
 };
 
 #endif  // CORE_FPDFAPI_RENDER_CPDF_RENDEROPTIONS_H_
