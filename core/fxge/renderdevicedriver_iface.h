@@ -111,7 +111,7 @@ class RenderDeviceDriverIface {
                                   BlendMode blend_type) = 0;
   virtual bool ContinueDIBits(CFX_AggImageRenderer* handle,
                               PauseIndicatorIface* pPause);
-  virtual bool DrawDeviceText(pdfium::span<const TextCharPos> pCharPos,
+  virtual bool DrawDeviceText(const pdfium::span<const TextCharPos>& pCharPos,
                               CFX_Font* font,
                               const CFX_Matrix& mtObject2Device,
                               float font_size,

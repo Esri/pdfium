@@ -186,7 +186,7 @@ bool CPDF_OCContext::GetOCGVisible(const CPDF_Dictionary* pOCGDict) const {
   return bState;
 }
 
-bool CPDF_OCContext::CheckPageObjectVisible(const CPDF_PageObject* pObj) const {
+bool CPDF_OCContextInterface::CheckPageObjectVisible(const CPDF_PageObject* pObj) const {
   const CPDF_ContentMarks* pMarks = pObj->GetContentMarks();
   for (size_t i = 0; i < pMarks->CountItems(); ++i) {
     const CPDF_ContentMarkItem* item = pMarks->GetItem(i);

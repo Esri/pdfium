@@ -46,6 +46,9 @@ if ((is_linux || is_chromeos || is_android || is_apple ||
   _use_shim = false
 }
 
+# Overriden for GDAL: _use_shim=true causes crashes at runtime
+_use_shim = false
+
 if (_use_shim && !_disable_partition_alloc_everywhere) {
   _default_allocator = "partition"
 } else {

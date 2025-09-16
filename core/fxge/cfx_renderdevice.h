@@ -136,7 +136,7 @@ class CFX_RenderDevice {
   bool ContinueDIBits(CFX_AggImageRenderer* handle,
                       PauseIndicatorIface* pPause);
 
-  bool DrawNormalText(pdfium::span<const TextCharPos> pCharPos,
+  bool DrawNormalText(const pdfium::span<const TextCharPos>& pCharPos,
                       CFX_Font* font,
                       float font_size,
                       const CFX_Matrix& mtText2Device,

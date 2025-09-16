@@ -1079,7 +1079,7 @@ void CFX_RenderDevice::SyncInternalBitmaps() {
 }
 #endif  // defined(PDF_USE_SKIA)
 
-bool CFX_RenderDevice::DrawNormalText(pdfium::span<const TextCharPos> pCharPos,
+bool CFX_RenderDevice::DrawNormalText(const pdfium::span<const TextCharPos>& pCharPos,
                                       CFX_Font* font,
                                       float font_size,
                                       const CFX_Matrix& mtText2Device,

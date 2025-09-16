@@ -495,9 +495,9 @@ bool CJPX_Decoder::Init(pdfium::span<const uint8_t> src_data,
   }
 
   // For https://crbug.com/42270564
-  if (!strict_mode) {
-    CHECK(opj_decoder_set_strict_mode(codec_.get(), false));
-  }
+  // if (!strict_mode) {
+  //   CHECK(opj_decoder_set_strict_mode(codec_.get(), false));
+  // }
 
   opj_image_t* pTempImage = nullptr;
   if (!opj_read_header(stream_.get(), codec_.get(), &pTempImage)) {

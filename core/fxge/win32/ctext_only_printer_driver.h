@@ -57,7 +57,7 @@ class CTextOnlyPrinterDriver final : public RenderDeviceDriverIface {
                           const CFX_Matrix& matrix,
                           const FXDIB_ResampleOptions& options,
                           BlendMode blend_type) override;
-  bool DrawDeviceText(pdfium::span<const TextCharPos> pCharPos,
+  bool DrawDeviceText(const pdfium::span<const TextCharPos>& pCharPos,
                       CFX_Font* font,
                       const CFX_Matrix& mtObject2Device,
                       float font_size,
