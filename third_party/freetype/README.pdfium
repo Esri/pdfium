@@ -1,11 +1,11 @@
 Name: FreeType
-URL: http://www.freetype.org/
-Version: VER-2-13-3-68
-Revision: b1f47850878d232eea372ab167e760ccac4c4e32
+URL: https://gitlab.freedesktop.org/freetype/freetype
+Version: VER-2-13-3-305
+Revision: 08805be530d6820d2bf8a1b7685826de40f06812
 CPEPrefix: cpe:/a:freetype:freetype:2.13.3
 Security Critical: yes
 Shipped: yes
-License: FreeType License (FTL)
+License: FTL
 License File: FTL.TXT
 
 Description:
