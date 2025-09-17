@@ -28,13 +28,6 @@ defines {
 }
 
 files {
-  -- "constants/annotation_common.cpp",
-  -- "constants/appearance.cpp",
-  -- "constants/font_encodings.cpp",
-  -- "constants/form_fields.cpp",
-  -- "constants/page_object.cpp",
-  -- "constants/stream_dict_common.cpp",
-  -- "constants/transparency.cpp",
   "core/fdrm/fx_crypt_aes.cpp",
   "core/fdrm/fx_crypt.cpp",
   "core/fdrm/fx_crypt_sha.cpp",
@@ -105,6 +98,7 @@ files {
   "core/fpdfapi/page/cpdf_transferfunc.cpp",
   "core/fpdfapi/page/cpdf_transferfuncdib.cpp",
   "core/fpdfapi/page/cpdf_transparency.cpp",
+  "core/fpdfapi/page/jpx_decode_conversion.cpp",
   "core/fpdfapi/parser/cfdf_document.cpp",
   "core/fpdfapi/parser/cpdf_array.cpp",
   "core/fpdfapi/parser/cpdf_boolean.cpp",
