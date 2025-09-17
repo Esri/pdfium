@@ -28,13 +28,13 @@ defines {
 }
 
 files {
-  "constants/annotation_common.cpp",
-  "constants/appearance.cpp",
-  "constants/font_encodings.cpp",
-  "constants/form_fields.cpp",
-  "constants/page_object.cpp",
-  "constants/stream_dict_common.cpp",
-  "constants/transparency.cpp",
+  -- "constants/annotation_common.cpp",
+  -- "constants/appearance.cpp",
+  -- "constants/font_encodings.cpp",
+  -- "constants/form_fields.cpp",
+  -- "constants/page_object.cpp",
+  -- "constants/stream_dict_common.cpp",
+  -- "constants/transparency.cpp",
   "core/fdrm/fx_crypt_aes.cpp",
   "core/fdrm/fx_crypt.cpp",
   "core/fdrm/fx_crypt_sha.cpp",
@@ -366,10 +366,6 @@ if (_PLATFORM_IOS) then
     "-O3",
   }
 
-  defines {
-    "IS_APPLE",
-  }
-
   files {
     "core/fxge/apple/fx_apple_impl.cpp",
     "core/fxge/apple/fx_apple_platform.cpp",
@@ -384,10 +380,6 @@ if (_PLATFORM_LINUX) then
 end
 
 if (_PLATFORM_MACOS) then
-  defines {
-    "IS_APPLE",
-  }
-
   files {
     "core/fxge/apple/fx_apple_impl.cpp",
     "core/fxge/apple/fx_apple_platform.cpp",
