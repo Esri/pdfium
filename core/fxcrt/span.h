@@ -791,7 +791,11 @@ class GSL_POINTER span {
   template <typename OtherElementType,
             size_t OtherExtent,
             typename OtherInternalPtrType>
+#ifdef RTC_LINUX_ANDROID
+    requires((OtherExtent == dynamic_extent || Extent == OtherExtent) &&
+#else
     requires((OtherExtent == dynamic_extent || extent == OtherExtent) &&
+#endif
              std::equality_comparable_with<const element_type,
                                            const OtherElementType>)
   friend constexpr bool operator==(
@@ -826,7 +830,11 @@ class GSL_POINTER span {
   template <typename OtherElementType,
             size_t OtherExtent,
             typename OtherInternalPtrType>
+#ifdef RTC_LINUX_ANDROID
+    requires((OtherExtent == dynamic_extent || Extent == OtherExtent) &&
+#else
     requires((OtherExtent == dynamic_extent || extent == OtherExtent) &&
+#endif
              std::three_way_comparable_with<const element_type,
                                             const OtherElementType>)
   friend constexpr auto operator<=>(
