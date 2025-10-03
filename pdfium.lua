@@ -341,10 +341,6 @@ if not (_PLATFORM_WINDOWS) then
 end
 
 if (_PLATFORM_ANDROID) then
-  buildoptions {
-    "-O3",
-  }
-
   files {
     "core/fxge/android/cfpf_skiadevicemodule.cpp",
     "core/fxge/android/cfpf_skiafont.cpp",
@@ -353,17 +349,25 @@ if (_PLATFORM_ANDROID) then
     "core/fxge/android/cfx_androidfontinfo.cpp",
     "core/fxge/android/fx_android_impl.cpp",
   }
-end
 
-if (_PLATFORM_IOS) then
+  configuration { "*release" }
+
   buildoptions {
     "-O3",
   }
+end
 
+if (_PLATFORM_IOS) then
   files {
     "core/fxge/apple/fx_apple_impl.cpp",
     "core/fxge/apple/fx_apple_platform.cpp",
     "core/fxge/apple/fx_quartz_device.cpp",
+  }
+
+  configuration { "*release" }
+
+  buildoptions {
+    "-O3",
   }
 end
 
