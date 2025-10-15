@@ -17,6 +17,7 @@ includedirs {
   _3RDPARTY_DIR .. "/icu/icu4c/source/common",
   _3RDPARTY_DIR .. "/libjpeg-turbo",
   _3RDPARTY_DIR .. "/openjpeg/src/lib/openjp2",
+  _3RDPARTY_DIR .. "/openjpeg/src_generated/lib/openjp2",
   _3RDPARTY_DIR .. "/zlib-ng",
 }
 
