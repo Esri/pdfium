@@ -29,13 +29,6 @@ defines {
 }
 
 files {
-  "constants/annotation_common.cpp",
-  "constants/appearance.cpp",
-  "constants/font_encodings.cpp",
-  "constants/form_fields.cpp",
-  "constants/page_object.cpp",
-  "constants/stream_dict_common.cpp",
-  "constants/transparency.cpp",
   "core/fdrm/fx_crypt_aes.cpp",
   "core/fdrm/fx_crypt.cpp",
   "core/fdrm/fx_crypt_sha.cpp",
@@ -106,6 +99,7 @@ files {
   "core/fpdfapi/page/cpdf_transferfunc.cpp",
   "core/fpdfapi/page/cpdf_transferfuncdib.cpp",
   "core/fpdfapi/page/cpdf_transparency.cpp",
+  "core/fpdfapi/page/jpx_decode_conversion.cpp",
   "core/fpdfapi/parser/cfdf_document.cpp",
   "core/fpdfapi/parser/cpdf_array.cpp",
   "core/fpdfapi/parser/cpdf_boolean.cpp",
@@ -348,10 +342,6 @@ if not (_PLATFORM_WINDOWS) then
 end
 
 if (_PLATFORM_ANDROID) then
-  buildoptions {
-    "-O3",
-  }
-
   files {
     "core/fxge/android/cfpf_skiadevicemodule.cpp",
     "core/fxge/android/cfpf_skiafont.cpp",
@@ -360,17 +350,25 @@ if (_PLATFORM_ANDROID) then
     "core/fxge/android/cfx_androidfontinfo.cpp",
     "core/fxge/android/fx_android_impl.cpp",
   }
-end
 
-if (_PLATFORM_IOS) then
+  configuration { "*release" }
+
   buildoptions {
     "-O3",
   }
+end
 
+if (_PLATFORM_IOS) then
   files {
     "core/fxge/apple/fx_apple_impl.cpp",
     "core/fxge/apple/fx_apple_platform.cpp",
     "core/fxge/apple/fx_quartz_device.cpp",
+  }
+
+  configuration { "*release" }
+
+  buildoptions {
+    "-O3",
   }
 end
 

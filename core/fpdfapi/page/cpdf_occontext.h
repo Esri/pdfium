@@ -19,15 +19,14 @@ class CPDF_Dictionary;
 class CPDF_Document;
 class CPDF_PageObject;
 
-class CPDF_OCContextInterface: public Retainable
-{
-    public:
-        virtual ~CPDF_OCContextInterface() = default;
-        virtual bool CheckOCGDictVisible(const CPDF_Dictionary* pOCGDict) const = 0;
-        virtual bool CheckPageObjectVisible(const CPDF_PageObject* pObj) const;
+class CPDF_OCContextInterface : public Retainable {
+ public:
+  virtual ~CPDF_OCContextInterface() = default;
+  virtual bool CheckOCGDictVisible(const CPDF_Dictionary* pOCGDict) const = 0;
+  bool CheckPageObjectVisible(const CPDF_PageObject* pObj) const;
 };
 
-class CPDF_OCContext : public CPDF_OCContextInterface {
+class CPDF_OCContext final : public CPDF_OCContextInterface {
  public:
   enum UsageType { kView = 0, kDesign, kPrint, kExport };
 
@@ -36,20 +35,20 @@ class CPDF_OCContext : public CPDF_OCContextInterface {
   bool CheckOCGDictVisible(const CPDF_Dictionary* pOCGDict) const override;
 
  private:
-  CPDF_OCContext(CPDF_Document* pDoc, UsageType eUsageType);
+  CPDF_OCContext(CPDF_Document* doc, UsageType eUsageType);
   ~CPDF_OCContext() override;
 
-  bool LoadOCGStateFromConfig(const ByteString& csConfig,
+  bool LoadOCGStateFromConfig(ByteStringView config,
                               const CPDF_Dictionary* pOCGDict) const;
   bool LoadOCGState(const CPDF_Dictionary* pOCGDict) const;
   bool GetOCGVisible(const CPDF_Dictionary* pOCGDict) const;
   bool GetOCGVE(const CPDF_Array* pExpression, int nLevel) const;
   bool LoadOCMDState(const CPDF_Dictionary* pOCMDDict) const;
 
-  UnownedPtr<CPDF_Document> const m_pDocument;
-  const UsageType m_eUsageType;
+  UnownedPtr<CPDF_Document> const document_;
+  const UsageType usage_type_;
   mutable std::map<RetainPtr<const CPDF_Dictionary>, bool, std::less<>>
-      m_OGCStateCache;
+      ogcstate_cache_;
 };
 
 #endif  // CORE_FPDFAPI_PAGE_CPDF_OCCONTEXT_H_
